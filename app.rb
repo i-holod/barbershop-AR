@@ -15,5 +15,6 @@ end
 
 get '/' do
 	@barbers = Barber.all
+	#@barbers = Barber.order "created_at DESC" сортировка по дате создания
 	erb :index	
 end
