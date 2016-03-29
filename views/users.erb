@@ -1,0 +1,32 @@
+<table class="table table-striped">
+<caption>Users list*</caption>
+
+<thead>
+
+<tr>
+	<th>Name</th>
+	<th>Phone</th>
+	<th>Date</th>
+	<th>Barber</th>
+	<th>Color</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<% @show.each do |x| %>
+
+<tr>
+	<td><%= x.name %></td>
+	<td><%= x.phone %></td>
+	<td><%= x.datestamp %></td>
+	<td><%= x.barber %></td>
+	<td style="background-color: <%= x.color %>;"><%= x.color %></td>
+</tr>
+
+<% end %>
+</tbody>
+</table>
+	
+<p class="text-muted"><span class="label label-info">*in reverse order</span></p>
