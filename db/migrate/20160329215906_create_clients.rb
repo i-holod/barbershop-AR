@@ -7,7 +7,7 @@ class CreateClients < ActiveRecord::Migration
 		t.text :datestamp
 		t.text :barber
 		t.text :color
-		t.timestamps
+		t.timestamps null: false
 	
 	end
   
