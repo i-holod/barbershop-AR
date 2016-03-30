@@ -6,24 +6,24 @@ You can plan your visit to our barber shop.
 
 	<div class="form-group">
 		<label>Your name</label>
-		<input type="text" name="client[name]" class="form-control" placeholder="Name" value="">
+		<input type="text" name="client[name]" class="form-control" placeholder="Name" value="<%= @c.name %>">
 	</div>
   
 	<div class="form-group">
 		<label>Your phone</label>
-		<input type="text" name="client[phone]" class="form-control" placeholder="Phone" value="">
+		<input type="text" name="client[phone]" class="form-control" placeholder="Phone" value="<%= @c.phone %>">
 	</div>
   
 	<div class="form-group">
 		<label>Date and time</label>
-		<input id="datetimepicker" type="text" name="client[datestamp]" class="form-control" placeholder="Date and time" value="">
+		<input id="datetimepicker" type="text" name="client[datestamp]" class="form-control" placeholder="Date and time" value="<%= @c.datestamp %>">
 	</div>
   
 	<div class="form-group">
 		<label>Your barber:</label>
 		<select class="form-control" name="client[barber]">
 		<% @barbers.each do |x| %>
-			<option <%= @barber == x.name ? "selected" : "" %>><%= x.name %></option>
+			<option <%= @c.barber == x.name ? "selected" : "" %>><%= x.name %></option>
 		<% end %>
 		</select>
 	</div>

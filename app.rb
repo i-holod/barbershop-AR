@@ -25,18 +25,17 @@ get '/' do
 end
 
 get '/visit' do
+	@c = Client.new
 	erb :visit
 end
 
 post '/visit' do
-	c = Client.new params[:client]
+	@c = Client.new params[:client]
 
-	@barber = c.name
-
-	if c.save
-		erb "Thank you, #{c.name}. We call you later!"
+	if @c.save
+		erb "Thank you, #{@c.name}. We call you later!"
 	else
-		@error = c.errors.full_messages.first
+		@error = @c.errors.full_messages.first
 		erb :visit
 	end
 end
