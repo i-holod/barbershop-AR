@@ -11,18 +11,19 @@ end
 class Barber < ActiveRecord::Base
 end
 
+before do
+	@barbers = Barber.all
+end
+
 get '/' do
 	erb :index	
 end
 
 get '/visit' do
-	@barbers = Barber.all
 	erb :visit
 end
 
 post '/visit' do
-	@barbers = Barber.all
-
 	c = Client.new params[:client]
 	c.save
 	
