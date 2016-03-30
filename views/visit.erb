@@ -6,22 +6,22 @@ You can plan your visit to our barber shop.
 
 	<div class="form-group">
 		<label>Your name</label>
-		<input type="text" name="username" class="form-control" placeholder="Name" value="<%= @username %>">
+		<input type="text" name="client[name]" class="form-control" placeholder="Name" value="">
 	</div>
   
 	<div class="form-group">
 		<label>Your phone</label>
-		<input type="text" name="phone" class="form-control" placeholder="Phone" value="<%= @phone %>">
+		<input type="text" name="client[phone]" class="form-control" placeholder="Phone" value="">
 	</div>
   
 	<div class="form-group">
 		<label>Date and time</label>
-		<input id="datetimepicker" type="text" name="datestamp" class="form-control" placeholder="Date and time" value="<%= @datestamp %>">
+		<input id="datetimepicker" type="text" name="client[datestamp]" class="form-control" placeholder="Date and time" value="">
 	</div>
   
 	<div class="form-group">
 		<label>Your barber:</label>
-		<select class="form-control" name="barber">
+		<select class="form-control" name="client[barber]">
 		<% @barbers.each do |x| %>
 			<option <%= @barber == x.name ? "selected" : "" %>><%= x.name %></option>
 		<% end %>
@@ -30,7 +30,7 @@ You can plan your visit to our barber shop.
 	
 	<div class="form-group">
 		<label>Your color:</label>
-		<select id="color" name="color">
+		<select id="color" name="client[color]">
 			<option value="#7bd148">Green</option>
 			<option value="#5484ed">Bold blue</option>
 			<option value="#a4bdfc">Blue</option>
