@@ -1,1 +1,5 @@
-Hello, do you need a barber?
+Hello, do you need a barber?<br><br>
+
+<% @barbers.each do |x| %>
+	<a href="/barber/<%= x.id %>"><%= x.name %></a><br>
+<% end %>

@@ -41,12 +41,15 @@ post '/visit' do
 end
 
 get '/users' do
-
 	@show = Client.order "created_at DESC"
 	erb :users
 end
 
-
+get '/barber/:id' do
+	id = params[:id]
+	@barber = Barber.find params[:id]
+	erb :barber
+end
 
 
 
