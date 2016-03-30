@@ -51,7 +51,11 @@ get '/barber/:id' do
 	erb :barber
 end
 
-
+get '/client/:id' do
+	id = params[:id]
+	@client = Client.find params[:id]
+	erb :client
+end
 
 
 
