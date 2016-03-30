@@ -40,9 +40,9 @@ post '/visit' do
 	end
 end
 
-get '/users' do
+get '/clients' do
 	@show = Client.order "created_at DESC"
-	erb :users
+	erb :clients
 end
 
 get '/barber/:id' do
